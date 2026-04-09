@@ -1,0 +1,381 @@
+<!-- Mira Staffing – Virtual Front Desk | WordPress HTML Block -->
+<!-- Paste this entire block into a WordPress "Custom HTML" block -->
+
+<style>
+.mira-vfd * { box-sizing: border-box; margin: 0; padding: 0; }
+
+.mira-vfd {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f5f4f1;
+  padding: 0 0 60px;
+}
+
+/* Header */
+.mira-vfd .vfd-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e4e0;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mira-vfd .vfd-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.mira-vfd .vfd-logo-mark {
+  width: 32px; height: 32px;
+  background: #1a2e4a;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+}
+.mira-vfd .vfd-logo-mark span {
+  color: #c9a84c; font-weight: 600; font-size: 12px; letter-spacing: 0.5px;
+}
+.mira-vfd .vfd-logo-name {
+  font-size: 15px; font-weight: 500; color: #1a1a1a;
+}
+.mira-vfd .vfd-back {
+  font-size: 13px; color: #666; text-decoration: none;
+  display: flex; align-items: center; gap: 5px;
+  padding: 6px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.mira-vfd .vfd-back:hover { background: #f0f0f0; color: #444; }
+
+/* Hero */
+.mira-vfd .vfd-hero {
+  text-align: center;
+  padding: 44px 24px 28px;
+}
+.mira-vfd .vfd-star-badge {
+  display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px;
+}
+.mira-vfd .vfd-badge-label {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.13em; text-transform: uppercase; color: #a0814a;
+}
+.mira-vfd .vfd-hero h1 {
+  font-size: clamp(22px, 4vw, 36px);
+  font-weight: 600; color: #1a1a1a;
+  margin-bottom: 10px; line-height: 1.25;
+}
+.mira-vfd .vfd-hero p {
+  font-size: 15px; color: #666;
+  max-width: 440px; margin: 0 auto; line-height: 1.6;
+}
+
+/* Cards wrapper */
+.mira-vfd .vfd-cards {
+  padding: 0 16px;
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex; flex-direction: column; gap: 16px;
+}
+
+/* Action Card */
+.mira-vfd .vfd-action-card {
+  background: #ffffff;
+  border: 1px solid #e5e4e0;
+  border-radius: 14px;
+  padding: 36px 32px;
+}
+.mira-vfd .vfd-status-row {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin-bottom: 18px;
+}
+.mira-vfd .vfd-dot-live {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #22c55e; position: relative; flex-shrink: 0;
+}
+.mira-vfd .vfd-dot-live::after {
+  content: '';
+  position: absolute; inset: -3px; border-radius: 50%;
+  background: #22c55e; opacity: 0.3;
+  animation: miraVfdPulse 2s infinite;
+}
+@keyframes miraVfdPulse {
+  0%,100% { transform: scale(1); opacity: 0.3; }
+  50%      { transform: scale(1.7); opacity: 0.08; }
+}
+.mira-vfd .vfd-dot-offline {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #aaa; flex-shrink: 0;
+}
+.mira-vfd .vfd-status-live  { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #16a34a; }
+.mira-vfd .vfd-status-off   { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #888; }
+.mira-vfd .vfd-action-card h2 {
+  font-size: clamp(18px, 3vw, 24px); font-weight: 600; color: #1a1a1a;
+  text-align: center; margin-bottom: 10px; line-height: 1.3;
+}
+.mira-vfd .vfd-action-card .vfd-sub {
+  font-size: 14px; color: #666; text-align: center;
+  line-height: 1.6; max-width: 380px; margin: 0 auto 28px;
+}
+.mira-vfd .vfd-btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 15px 24px;
+  border: none; border-radius: 10px;
+  font-size: 16px; font-weight: 600;
+  cursor: pointer; text-decoration: none;
+  transition: background 0.15s, transform 0.1s;
+  min-height: 52px;
+}
+.mira-vfd .vfd-btn:active { transform: scale(0.98); }
+.mira-vfd .vfd-btn-gold   { background: #c9a84c; color: #fff; }
+.mira-vfd .vfd-btn-gold:hover  { background: #b8973f; color: #fff; }
+.mira-vfd .vfd-btn-navy   { background: #1a2e4a; color: #fff; }
+.mira-vfd .vfd-btn-navy:hover  { background: #243d61; color: #fff; }
+.mira-vfd .vfd-dial {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  font-size: 13px; color: #777; margin-top: 14px;
+}
+.mira-vfd .vfd-dial strong { color: #333; }
+.mira-vfd .vfd-sec-links {
+  display: flex; align-items: center; justify-content: center; gap: 18px;
+  margin-top: 14px; flex-wrap: wrap;
+}
+.mira-vfd .vfd-sec-link {
+  font-size: 13px; color: #888; text-decoration: none;
+  display: flex; align-items: center; gap: 5px;
+  transition: color 0.15s;
+}
+.mira-vfd .vfd-sec-link:hover { color: #c9a84c; }
+.mira-vfd .vfd-divider { color: #ddd; font-size: 13px; }
+.mira-vfd .vfd-time-note {
+  display: flex; align-items: center; justify-content: center; gap: 5px;
+  font-size: 12px; color: #aaa; margin-top: 12px;
+}
+
+/* Prep Card */
+.mira-vfd .vfd-prep-card {
+  background: #ffffff;
+  border: 1px solid #e5e4e0;
+  border-radius: 14px;
+  padding: 22px 28px;
+}
+.mira-vfd .vfd-prep-title {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: #999; margin-bottom: 18px;
+}
+.mira-vfd .vfd-tips { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.mira-vfd .vfd-tip {
+  display: flex; align-items: center; gap: 14px;
+  font-size: 14px; color: #555;
+}
+.mira-vfd .vfd-tip-icon {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: #fdf3dc;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Footer */
+.mira-vfd .vfd-footer {
+  background: #ffffff;
+  border-top: 1px solid #e5e4e0;
+  padding: 18px 24px;
+  text-align: center;
+  margin-top: 60px;
+}
+.mira-vfd .vfd-footer-links {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; flex-wrap: wrap; margin-bottom: 8px;
+}
+.mira-vfd .vfd-footer-links a {
+  font-size: 12px; color: #888; text-decoration: none;
+}
+.mira-vfd .vfd-footer-links a:hover { color: #333; }
+.mira-vfd .vfd-copyright { font-size: 12px; color: #bbb; }
+
+@media (max-width: 480px) {
+  .mira-vfd .vfd-action-card { padding: 28px 18px; }
+  .mira-vfd .vfd-cards { padding: 0 12px; }
+  .mira-vfd .vfd-sec-links { gap: 12px; }
+}
+</style>
+
+<div class="mira-vfd">
+
+  <!-- Header -->
+  <div class="vfd-header">
+    <div class="vfd-logo">
+      <div class="vfd-logo-mark"><span>MS</span></div>
+      <span class="vfd-logo-name">Mira Staffing</span>
+    </div>
+    <a href="https://mirastaffing.com" class="vfd-back">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+        <path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Back to main site
+    </a>
+  </div>
+
+  <!-- Hero -->
+  <div class="vfd-hero">
+    <div class="vfd-star-badge">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="#c9a84c">
+        <path d="M8 1l1.8 3.7L14 5.4l-3 2.9.7 4.1L8 10.3l-3.7 2.1.7-4.1-3-2.9 4.2-.7z"/>
+      </svg>
+      <span class="vfd-badge-label">Virtual Front Desk</span>
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="#c9a84c">
+        <path d="M8 1l1.8 3.7L14 5.4l-3 2.9.7 4.1L8 10.3l-3.7 2.1.7-4.1-3-2.9 4.2-.7z"/>
+      </svg>
+    </div>
+    <h1>Your partner in staffing excellence</h1>
+    <p>Welcome to Mira's live operations suite. Connect directly with our team for immediate, personalized support.</p>
+  </div>
+
+  <!-- Cards -->
+  <div class="vfd-cards">
+
+    <!-- Action Card -->
+    <div class="vfd-action-card">
+      <div class="vfd-status-row" id="miraVfdStatusRow"></div>
+      <h2 id="miraVfdHeadline"></h2>
+      <p class="vfd-sub" id="miraVfdSub"></p>
+      <div id="miraVfdCta"></div>
+    </div>
+
+    <!-- Prep Card -->
+    <div class="vfd-prep-card">
+      <p class="vfd-prep-title">Before you join</p>
+      <ul class="vfd-tips">
+        <li class="vfd-tip">
+          <div class="vfd-tip-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2"/>
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+            </svg>
+          </div>
+          Have your Job ID ready
+        </li>
+        <li class="vfd-tip">
+          <div class="vfd-tip-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 7l-7 5 7 5V7z"/>
+              <rect x="1" y="5" width="15" height="14" rx="2"/>
+            </svg>
+          </div>
+          Ensure your camera &amp; mic are on
+        </li>
+        <li class="vfd-tip">
+          <div class="vfd-tip-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          Expect a wait time of &lt; 2 minutes
+        </li>
+      </ul>
+    </div>
+
+  </div><!-- /vfd-cards -->
+
+  <!-- Footer -->
+  <div class="vfd-footer">
+    <div class="vfd-footer-links">
+      <a href="https://mirastaffing.com">Home</a>
+      <a href="https://mirastaffing.com/contact">Contact</a>
+      <a href="https://mirastaffing.com/faq">FAQ</a>
+      <a href="https://mirastaffing.com/privacy">Privacy Policy</a>
+    </div>
+    <p class="vfd-copyright">&copy; 2025 Mira Staffing. All rights reserved.</p>
+  </div>
+
+</div><!-- /mira-vfd -->
+
+<script>
+(function () {
+  function miraIsLive() {
+    var now = new Date();
+    var cst = new Date(now.toLocaleString('en-US', { timeZone: 'America/Chicago' }));
+    var day  = cst.getDay();
+    var time = cst.getHours() + cst.getMinutes() / 60;
+    return day >= 1 && day <= 5 && time >= 8 && time < 17;
+  }
+
+  function miraGetCSTTime() {
+    return new Date().toLocaleTimeString('en-US', {
+      timeZone: 'America/Chicago',
+      hour: '2-digit', minute: '2-digit', hour12: true
+    });
+  }
+
+  function miraRender() {
+    var live       = miraIsLive();
+    var statusRow  = document.getElementById('miraVfdStatusRow');
+    var headline   = document.getElementById('miraVfdHeadline');
+    var sub        = document.getElementById('miraVfdSub');
+    var cta        = document.getElementById('miraVfdCta');
+
+    if (!statusRow) return;
+
+    if (live) {
+      statusRow.innerHTML =
+        '<span class="vfd-dot-live"></span>' +
+        '<span class="vfd-status-live">Live Now</span>';
+
+      headline.textContent = 'Connect with Mira Operations';
+      sub.textContent = 'Our Operations Manager is currently online and ready to assist you.';
+
+      cta.innerHTML =
+        '<a href="https://meet.google.com/ykz-mifu-gpk" target="_blank" rel="noopener noreferrer" class="vfd-btn vfd-btn-gold">' +
+          '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+            '<path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/>' +
+          '</svg>' +
+          'Enter the live suite' +
+        '</a>' +
+        '<div class="vfd-dial">' +
+          '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+            '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9c1.18 2.09 2.86 3.77 4.95 4.95l1.36-1.36a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 14.92z"/>' +
+          '</svg>' +
+          'Dial: <strong>+1 216-930-8502</strong>&nbsp;|&nbsp;PIN: <strong>915 621 037#</strong>' +
+        '</div>';
+
+    } else {
+      statusRow.innerHTML =
+        '<span class="vfd-dot-offline"></span>' +
+        '<span class="vfd-status-off">Currently Offline</span>';
+
+      headline.textContent = 'Our operations suite is currently closed';
+      sub.textContent = 'Our live support hours are Monday\u2013Friday, 8:00 AM \u2013 5:00 PM CST. We would love to help you once we are back online!';
+
+      cta.innerHTML =
+        '<a href="https://mirastaffing.com/contact" class="vfd-btn vfd-btn-navy">Contact us</a>' +
+        '<div class="vfd-sec-links">' +
+          '<a href="mailto:support@mirastaffing.com" class="vfd-sec-link">' +
+            '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+              '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>' +
+              '<polyline points="22,6 12,13 2,6"/>' +
+            '</svg>' +
+            'Send an email' +
+          '</a>' +
+          '<span class="vfd-divider">|</span>' +
+          '<a href="https://mirastaffing.com/faq" class="vfd-sec-link">' +
+            '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+              '<circle cx="12" cy="12" r="10"/>' +
+              '<path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>' +
+              '<line x1="12" y1="17" x2="12.01" y2="17"/>' +
+            '</svg>' +
+            'View FAQ' +
+          '</a>' +
+        '</div>' +
+        '<div class="vfd-time-note">' +
+          '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+            '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>' +
+          '</svg>' +
+          'Current CST time: ' + miraGetCSTTime() +
+        '</div>';
+    }
+  }
+
+  miraRender();
+  setInterval(miraRender, 60000);
+})();
+</script>
